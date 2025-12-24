@@ -35,6 +35,8 @@ on init
 
 on boot
     setprop sys.usb.config adb
+    chmod 0777 /system/bin/bootctrl-remove.sh
+    start bootctrl-remove
 
 on property:twrp.modules.loaded=true
     # Load ADSP firmware for PMIC
@@ -49,6 +51,13 @@ on property:twrp.modules.loaded=true
 on property:vendor.sys.listeners.registered=true
     start keymaster-4-1
     start gatekeeper-1-0
+
+service bootctrl-remove /system/bin/bootctrl-remove.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
 
 service vendor.qseecomd /vendor/bin/qseecomd
     user root
