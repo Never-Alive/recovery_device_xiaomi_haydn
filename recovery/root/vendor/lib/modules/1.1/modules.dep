@@ -1,0 +1,11 @@
+q6_notifier_dlkm.ko: q6_pdr_dlkm.ko
+qti_battery_charger_main.ko: msm_drm.ko
+q6_pdr_dlkm.ko:
+xiaomi_touch.ko: msm_drm.ko
+hwid.ko:
+apr_dlkm.ko: q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko
+snd_event_dlkm.ko:
+msm_drm.ko:
+adsp_loader_dlkm.ko: apr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko
+focaltech_touch.ko: xiaomi_touch.ko msm_drm.ko
+exfat.ko:
