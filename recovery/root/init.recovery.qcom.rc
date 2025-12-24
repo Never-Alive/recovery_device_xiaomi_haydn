@@ -2,6 +2,13 @@ on early-fs
     write /proc/sys/kernel/sched_lib_name "recovery,magiskboot,Updater,updater,update_engine_sideload"
     write /proc/sys/kernel/sched_lib_mask_force 255
 
+service device-init /system/bin/device-init.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 on fs
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
     chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/f0_save
@@ -34,6 +41,8 @@ on init
     start boot-hal-1-1
 
 on boot
+    chmod 0777 /system/bin/device-init.sh
+    start device-init
     setprop sys.usb.config adb
     chmod 0777 /system/bin/bootctrl-remove.sh
     start bootctrl-remove
