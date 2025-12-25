@@ -155,7 +155,6 @@ TARGET_USES_LOGD := true
 # PBRP config
 PB_DISABLE_DEFAULT_TREBLE_COMP := true
 PB_OFFICIAL := false
-PB_TORCH_PATH := /sys/class/leds/flashlight
 
 # TWRP configs
 TW_THEME := portrait_hdpi

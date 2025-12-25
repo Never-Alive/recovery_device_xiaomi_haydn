@@ -34,5 +34,5 @@ TARGET_OTA_ASSERT_DEVICE := haydn,haydn_in,haydnin
 
 # Theme
 TW_STATUS_ICONS_ALIGN := center
-TW_Y_OFFSET := 0
+TW_Y_OFFSET := 16
 TW_H_OFFSET := 0
