@@ -176,5 +176,5 @@ TW_BACKUP_EXCLUSIONS := /data/fonts,/data/adb/ap,/data/adb/ksu
 TW_LOAD_VENDOR_MODULES := "msm_drm.ko focaltech_touch.ko adsp_loader_dlkm.ko qti_battery_charger_main.ko exfat.ko"
 
 # Version/Framerate
-TW_DEVICE_VERSION := _by-Lucifer
+TW_DEVICE_VERSION := by_Lucifer
 TW_FRAMERATE := 120
