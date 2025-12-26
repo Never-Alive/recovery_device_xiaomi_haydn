@@ -19,6 +19,9 @@ DEVICE_PATH := device/xiaomi/haydn
 # Inherit device.mk
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
+# Inherit Orangefox's config
+$(call inherit-product-if-exists, device/xiaomi/haydn/fox_haydn.mk)
+
 # Release name
 PRODUCT_RELEASE_NAME := haydn
 
